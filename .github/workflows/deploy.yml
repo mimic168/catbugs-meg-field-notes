@@ -50,7 +50,7 @@ jobs:
         run: node ./quartz/bootstrap-cli.mjs plugin install --from-config
 
       - name: Build Quartz
-        run: npx quartz build
+        run: node ./quartz/bootstrap-cli.mjs build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
