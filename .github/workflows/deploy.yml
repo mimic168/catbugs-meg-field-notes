@@ -52,6 +52,9 @@ jobs:
       - name: Patch OG Chinese font
         run: node ./patch-og-font.mjs
 
+      - name: Patch OG image cache
+        run: node ./patch-og-cache.mjs
+
       - name: Build Quartz
         run: node ./quartz/bootstrap-cli.mjs build
 
