@@ -1,11 +1,12 @@
-# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+﻿# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
   pageTitle: "貓蟲的 M.E.G. 探索筆記"
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
-    provider: plausible
+    provider: google
+    tagId: G-QT4D8PEVTM
   locale: zh-TW
   baseUrl: mimic168.github.io/catbugs-meg-field-notes
   ignorePatterns:
@@ -137,6 +138,13 @@ plugins:
       priority: 50
   - source: "@quartz-community/graph"
     enabled: true
+    options:
+      globalGraph:
+        enableRadial: false
+        fontSize: 0.35
+        opacityScale: 1
+        repelForce: 1.2
+        linkDistance: 75
     layout:
       position: right
       priority: 10
