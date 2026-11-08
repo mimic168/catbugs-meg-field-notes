@@ -1,4 +1,4 @@
-﻿
+
 name: Deploy Quartz site to GitHub Pages
 
 on:
@@ -48,6 +48,9 @@ jobs:
 
       - name: Install Quartz plugins
         run: node ./quartz/bootstrap-cli.mjs plugin install --from-config
+
+      - name: Patch Compass Graph
+        run: node ./patch-compass-graph.mjs
 
       - name: Patch OG Chinese font
         run: node ./patch-og-font.mjs

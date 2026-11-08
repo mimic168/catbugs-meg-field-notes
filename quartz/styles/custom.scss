@@ -1,3 +1,48 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+/* 星海羅盤：全域圖按鈕 */
+.graph > .compass-global-button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  padding: 0.65rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  background: var(--light);
+  color: var(--dark);
+  cursor: pointer;
+  font: inherit;
+  transition: background-color 0.2s;
+}
+
+.graph > .compass-global-button:hover {
+  background: var(--lightgray);
+}
+
+/* 局部圖展開：原本 250px 框框變成大型浮動視窗 */
+.graph.compass-local-expanded > .graph-outer {
+  position: fixed;
+  z-index: 10000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+  margin: 0;
+  background: var(--light);
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.55);
+}
+
+/* 展開時讓右上角按鈕保持可操作 */
+.graph.compass-local-expanded .global-graph-icon {
+  z-index: 2;
+  opacity: 1;
+  background: var(--light);
+}
+
+/* 局部圖展開時，將右側欄位提升至最上層 */
+body:has(.compass-local-expanded) .sidebar:has(.compass-local-expanded) {
+  z-index: 10001 !important;
+}
